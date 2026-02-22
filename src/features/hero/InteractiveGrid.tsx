@@ -149,7 +149,7 @@ const Scene: React.FC = () => {
 
 const InteractiveGrid: React.FC = () => {
     return (
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none', }}>
             <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
                 <Scene />
             </Canvas>

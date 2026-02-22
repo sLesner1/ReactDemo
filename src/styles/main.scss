@@ -1,7 +1,9 @@
-body {
+@import './variables.scss';
+
+html, body {
   margin: 0;
   padding: 0;
-  background-color: #0f172a;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: 'var(--color-background)';
   overflow-x: hidden;
 }
