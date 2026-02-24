@@ -14,7 +14,12 @@ const Skills: React.FC = () => {
             justifyContent: 'center'
         }}>
             <div style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
-                <HighlightBox />
+                <HighlightBox
+                    icon={<></>}
+                    value="Web"
+                    label="Architecture & Logic"
+                    accentColor="#78E4FE"
+                />
             </div>
         </section>
     );
