@@ -16,7 +16,7 @@ const HighlightBox: React.FC<HighlightBoxProps> = ({
     return (
         <div style={cardStyle}>
             <div style={cornerGlowStyle} />
-            
+
             <div style={grainOverlayStyle} />
 
             <div style={contentStyle}>
@@ -26,7 +26,7 @@ const HighlightBox: React.FC<HighlightBoxProps> = ({
                 <h3 style={valueStyle}>{value}</h3>
                 <p style={labelStyle}>{label}</p>
             </div>
-            
+
             <div style={{
                 ...accentGlowStyle,
                 background: `radial-gradient(circle at center, ${accentColor}08, transparent 70%)`
@@ -37,8 +37,8 @@ const HighlightBox: React.FC<HighlightBoxProps> = ({
 
 const cardStyle: React.CSSProperties = {
     position: 'relative',
-    width: '200px',
-    height: '200px',
+    width: '220px',
+    height: '220px',
     borderRadius: '28px',
     overflow: 'hidden',
     display: 'flex',
@@ -60,7 +60,7 @@ const cornerGlowStyle: React.CSSProperties = {
         radial-gradient(ellipse at -40% -50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
         radial-gradient(ellipse at 140% 150%, rgba(255, 255, 255, 0.15) 0%, transparent 60%)
     `,
-    filter: 'blur(3px)', 
+    filter: 'blur(3px)',
 };
 
 const grainOverlayStyle: React.CSSProperties = {
@@ -72,6 +72,7 @@ const grainOverlayStyle: React.CSSProperties = {
 };
 
 const contentStyle: React.CSSProperties = {
+    padding: 'var(--space-20)',
     position: 'relative',
     zIndex: 2,
     textAlign: 'center',
