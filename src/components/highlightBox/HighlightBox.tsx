@@ -39,7 +39,7 @@ const cardStyle: React.CSSProperties = {
     position: 'relative',
     width: '220px',
     height: '220px',
-    borderRadius: '28px',
+    borderRadius: '60px',
     overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
@@ -50,6 +50,7 @@ const cardStyle: React.CSSProperties = {
     border: '1px solid rgba(255, 255, 255, 0.08)',
     transition: 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
     cursor: 'default',
+    cornerShape: 'squircle'
 };
 
 const cornerGlowStyle: React.CSSProperties = {
@@ -94,6 +95,8 @@ const labelStyle: React.CSSProperties = {
     fontWeight: 600,
     textTransform: 'uppercase',
     letterSpacing: '0.1em',
+    lineHeight: '1.2',
+    minHeight: '2.4em',
 };
 
 const iconStyle: React.CSSProperties = {

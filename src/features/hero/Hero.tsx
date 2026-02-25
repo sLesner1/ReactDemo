@@ -60,12 +60,12 @@ const Hero: React.FC = () => {
                     WebkitTextFillColor: 'transparent',
 
                     filter: `
-        drop-shadow(0px 0px 10px rgba(111,157,250, 0.8))
+        drop-shadow(0px 0px 10px #6f9dfacc)
 
-        drop-shadow(-30px 0px 45px rgba(87, 221, 255, 0.6)) 
+        drop-shadow(-30px 0px 45px #6DF9FB99) 
         drop-shadow(30px 0px 45px rgba(160, 30, 239, 0.6))
 
-        drop-shadow(-60px 0px 120px rgba(87, 221, 255, 0.3))
+        drop-shadow(-60px 0px 120px #6DF9FB4d)
         drop-shadow(60px 0px 120px rgba(160, 30, 239, 0.3))
     `
                 }}>
