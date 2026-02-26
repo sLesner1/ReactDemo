@@ -1,18 +1,12 @@
 import axios from 'axios';
 
-export interface ContributionData {
-  total: number;
-  daily: Record<string, { count: number }>;
-}
-
 const API_URL = 'https://github-contributions-api.deno.dev';
 
 export const ContributionsService = {
-  data: null as ContributionData | null,
 
   async fetch(fromDate: string) {
     try {
-      const response = await axios.get<ContributionData>(
+      const response = await axios.get(
         `${API_URL}/sLesner1.json?from=${fromDate}`
       );
       return response.data;

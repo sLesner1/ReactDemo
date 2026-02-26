@@ -18,20 +18,16 @@ const Hero: React.FC = () => {
             <div
                 style={{
                     position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
+                    width: '90rem',
                     height: '100%',
                     background: `
-                      radial-gradient(
-                        circle at center,
-                        rgba(9, 16, 35, 0.8) 0%,
-                        rgba(9, 16, 35, 0.5) 30%,
-                        rgba(9, 16, 35, 0.3) 55%,
-                        rgba(9, 16, 35, 0.1) 70%,
-                        rgba(9, 16, 35, 0.0) 85%
-                      )
-                    `,
+      radial-gradient(
+        ellipse at center,
+        rgba(9, 16, 35, 1.0) 0%,
+        rgba(9, 16, 35, 0.6) 15%,
+        rgba(9, 16, 35, 0.0) 50%
+      )
+    `,
                     zIndex: 1,
                     pointerEvents: 'none',
                 }}
@@ -60,7 +56,6 @@ const Hero: React.FC = () => {
                     WebkitTextFillColor: 'transparent',
 
                     filter: `
-        drop-shadow(0px 0px 10px #6f9dfacc)
 
         drop-shadow(-30px 0px 45px #6DF9FB99) 
         drop-shadow(30px 0px 45px rgba(160, 30, 239, 0.6))
