@@ -4,6 +4,8 @@ import {  MdCommit, MdWhatshot, MdLeaderboard, MdStar } from 'react-icons/md';
 import { ContributionsService } from '../../services/contributionsService';
 import { CodewarsService } from '../../services/codewarsService';
 import { CircularProgress } from '@mui/material';
+import './Stats.scss';
+
 const IconGradient = () => (
   <svg width="0" height="0" style={{ position: 'absolute' }}>
     <linearGradient id="blue-purple-gradient" x1="0%" y1="0%" x2="80%" y2="80%">
@@ -102,9 +104,9 @@ const Stats: React.FC = () => {
         }}>
             <IconGradient />
 
-            <p style={{ color: 'var(--color-white)', fontSize: '2rem', fontWeight: 700, letterSpacing: '1px' }}>Stats</p>
+            <p className="stats__title">Stats</p>
 
-            <div style={{ display: 'flex', justifyContent: 'center', gap: 70, position: 'relative', zIndex: 2, textAlign: 'center', width: '100%' }}>
+            <div className="stats__content">
                 <HighlightBox
                     icon={<MdCommit size={84} style={{fill: "url(#blue-purple-gradient)" }} />}
                     value={contributions ? contributions : <CircularProgress size={24} color="inherit" />}
