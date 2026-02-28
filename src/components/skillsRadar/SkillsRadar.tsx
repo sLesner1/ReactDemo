@@ -20,7 +20,6 @@ const radarGridGlowPlugin = {
     const ctx = chart.ctx;
     ctx.save();
 
-    // glow settings
     ctx.shadowColor = '#6DF9FB66';
     ctx.shadowBlur = 20;
     ctx.shadowOffsetX = 0;
