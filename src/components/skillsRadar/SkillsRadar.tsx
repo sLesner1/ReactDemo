@@ -133,7 +133,7 @@ const SkillsRadar: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ width: '100%', height: 400 }}>
+    <div style={{ width: '100%', height: 350 }}>
       <canvas ref={canvasRef} style={{ width: '100%', height: '100%' }} />
     </div>
   );
