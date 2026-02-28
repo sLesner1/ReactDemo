@@ -6,7 +6,7 @@ import Footer from './features/footer/Footer';
 
 const App: React.FC = () => {
   return (
-    <div style={{ backgroundColor: 'var(--color-background)', display: 'flex', flexDirection: 'column', gap: 'var(--space-100)'}}>
+    <div className='app'>
       <Hero />
       <Skills />
       <Stats />
