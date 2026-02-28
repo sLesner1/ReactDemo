@@ -37,6 +37,8 @@ Chart.register(radarGridGlowPlugin);
 const SkillsRadar: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const chartRef = useRef<Chart | null>(null);
+  const isSmall = window.innerWidth < 1200;
+  const isXs = window.innerWidth < 768;
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -50,7 +52,7 @@ const SkillsRadar: React.FC = () => {
       const matrix = new DOMMatrix();
       matrix.scaleSelf(0.58, 0.58);
       matrix.translateSelf(
-      120,
+        120,
         700
       );
 
@@ -61,12 +63,18 @@ const SkillsRadar: React.FC = () => {
       chartRef.current = new Chart(ctx, {
         type: 'radar',
         data: {
-          labels: [
+          labels: !isXs ? [
             'Web Development',
             'Mobile Development',
             'Component Systems',
             'Performance Optimization',
             'TypeScript Mastery'
+          ] : [
+            'Web Development',
+            ['Mobile', 'Development'],
+            ['Component', 'Systems'],
+            ['Performance', 'Optimization'],
+            ['TypeScript', 'Mastery']
           ],
           datasets: [
             {
@@ -87,12 +95,6 @@ const SkillsRadar: React.FC = () => {
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          layout: {
-            padding: {
-              top: -100,
-              bottom: -100,
-            },
-          },
           scales: {
             r: {
               backgroundColor: pattern,
@@ -109,10 +111,18 @@ const SkillsRadar: React.FC = () => {
                 circular: true,
                 lineWidth: 1
               },
-              angleLines: { color: '#6DF9FB',
-                 lineWidth: 1,
-               },
-              pointLabels: { color: '#E2F8FF', font: { size: 14, weight: '600' } }
+              angleLines: {
+                color: '#6DF9FB',
+                lineWidth: 1,
+              },
+              pointLabels: {
+                color: '#E2F8FF',
+                padding: isXs ? 6 : 12,
+                font: {
+                  size: isXs ? 10 : isSmall ? 12 : 14,
+                  weight: '600',
+                },
+              },
             }
           },
           plugins: {
