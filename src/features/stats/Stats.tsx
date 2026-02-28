@@ -129,26 +129,6 @@ const Stats: React.FC = () => {
                     label="Codewars Honor Percentile"
                     accentColor="#78E4FE"
                 />
-                {/* <HighlightBox
-                    icon={<MdPhonelinkSetup size={64} />}
-                    value="Mobile"
-                    label="Mobile-first Experiences"
-                    accentColor="#A01EEF"
-                />
-
-                <HighlightBox
-                    icon={<MdBrush size={64} />}
-                    value="Design"
-                    label="UX / UI Engineering"
-                    accentColor="#22D3EE"
-                />
-
-                <HighlightBox
-                    icon={<MdSpeed size={64} />}
-                    value="Optimize"
-                    label="Performance & Rendering"
-                    accentColor="#F472B6"
-                /> */}
             </div>
         </section>
     );

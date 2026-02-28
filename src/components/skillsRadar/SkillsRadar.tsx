@@ -10,8 +10,30 @@ import {
   Legend,
 } from 'chart.js';
 
-// Rejestracja wymaganych elementów
+const radarGridGlowPlugin = {
+  id: 'radarGridGlow',
+
+  beforeDraw(chart: any) {
+    const scale = chart.scales.r;
+    if (!scale) return;
+
+    const ctx = chart.ctx;
+    ctx.save();
+
+    // glow settings
+    ctx.shadowColor = '#6DF9FB66';
+    ctx.shadowBlur = 20;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+  },
+
+  afterDraw(chart: any) {
+    chart.ctx.restore();
+  },
+};
+
 Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
+Chart.register(radarGridGlowPlugin);
 
 const SkillsRadar: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -27,9 +49,10 @@ const SkillsRadar: React.FC = () => {
     img.onload = () => {
       const pattern = ctx.createPattern(img, 'repeat');
       const matrix = new DOMMatrix();
+      matrix.scaleSelf(0.58, 0.58);
       matrix.translateSelf(
-        25,
-        120
+      250,
+        65
       );
 
       pattern.setTransform(matrix);
@@ -40,17 +63,16 @@ const SkillsRadar: React.FC = () => {
         type: 'radar',
         data: {
           labels: [
-            'Frontend Engineering',
+            'Web Development',
             'Mobile Development',
-            'UI / UX Engineering',
-            'Performance',
-            'Architecture',
-            'Product Thinking'
+            'Component Systems',
+            'Performance Optimization',
+            'TypeScript Mastery'
           ],
           datasets: [
             {
               label: 'Skills Overview',
-              data: [5, 4, 4, 3, 3, 4],
+              data: [4, 5, 3.5, 3.5, 4.5],
               fill: true,
               backgroundColor: 'rgba(109, 249, 251, 0.2)',
               borderColor: '#E2F8FF',
@@ -66,6 +88,12 @@ const SkillsRadar: React.FC = () => {
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: -100,
+              bottom: -100,
+            },
+          },
           scales: {
             r: {
               backgroundColor: pattern,
@@ -74,13 +102,17 @@ const SkillsRadar: React.FC = () => {
               ticks: {
                 stepSize: 1,
                 color: '#E2F8FF',
-                backdropColor: 'transparent'
+                backdropColor: 'transparent',
+                padding: 0,
               },
               grid: {
-                color: 'rgba(255,255,255,0.1)',
-                circular: true
+                color: '#6DF9FB',
+                circular: true,
+                lineWidth: 1
               },
-              angleLines: { color: 'rgba(255,255,255,0.15)' },
+              angleLines: { color: '#6DF9FB',
+                 lineWidth: 1,
+               },
               pointLabels: { color: '#E2F8FF', font: { size: 14, weight: '600' } }
             }
           },
@@ -102,7 +134,7 @@ const SkillsRadar: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ width: '100%', height: '100%' }}>
+    <div style={{ width: '100%', height: 400 }}>
       <canvas ref={canvasRef} style={{ width: '100%', height: '100%' }} />
     </div>
   );

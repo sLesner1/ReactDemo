@@ -1,5 +1,15 @@
 import React from 'react';
 import SkillsRadar from '../../components/skillsRadar/SkillsRadar';
+import { MdCode, MdLanguage, MdPhoneIphone, MdSpeed, MdWidgets } from 'react-icons/md';
+const IconGradient = () => (
+  <svg width="0" height="0" style={{ position: 'absolute' }}>
+    <linearGradient id="blue-purple-gradient" x1="0%" y1="0%" x2="80%" y2="80%">
+      <stop offset="0%" stopColor="var(--color-primary-light)" />
+      <stop offset="100%" stopColor="var(--color-primary-dark)" />
+    </linearGradient>
+  </svg>
+);
+
 const Skills: React.FC = () => {
     return (
         <section style={{
@@ -10,25 +20,54 @@ const Skills: React.FC = () => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-
-            // paddingLeft: 150,
-            // paddingRight: 150
         }}>
+            <IconGradient />
             <p style={{ color: 'var(--color-white)', fontSize: '2rem', fontWeight: 700, letterSpacing: '1px' }}>Skills</p>
             <div style={cardStyle}>
                 <div style={cornerGlowStyle} />
                 <div style={grainOverlayStyle} />
 
                 <div style={contentStyle}>
-                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                        <div style={{ width: '50%' }}>
-                            <p style={{ color: '#ccc', fontSize: 18, textAlign: 'left', width: '50%' }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis velit tellus, et facilisis justo mattis sagittis. Sed sem diam, vulputate quis ornare eget, fringilla in est. Maecenas vulputate accumsan gravida. Integer posuere quam dictum nulla rhoncus, vitae tempus sem tristique. In pulvinar ipsum semper leo sagittis ullamcorper. Aenean ac lorem nibh. Integer pharetra mauris id arcu mattis, id sodales est pellentesque. Sed dapibus urna justo, nec laoreet mauris rutrum non. sodales est pellentesque. Sed dapibus urna justo, nec laoreet mauris rutrum non. sodales est pellentesque. Sed dapibus urna justo, nec laoreet mauris rutrum non.
-                            </p>
+                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div style={{ width: '35%' }}>
+                            <p style={{ color: 'var(--color-white)', fontSize: '2rem', fontWeight: 700, letterSpacing: '1px', marginTop: 0 }}>Key Capabilities</p>
+                            <div style={{ width: '100%', display: 'flex', gap: 10, filter: 'drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.2))' }}>
+                                <MdLanguage size={52} style={{fill: "url(#blue-purple-gradient)" }} />
+                                <p style={{ color: '#ccc', fontSize: 18, textAlign: 'left' }}>
+                                    Web Development
+                                </p>
+                            </div>
+                            <div style={{ width: '100%', display: 'flex', gap: 10, filter: 'drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.2))' }}>
+                                <MdPhoneIphone size={52} style={{fill: "url(#blue-purple-gradient)" }} />
+                                <p style={{ color: '#ccc', fontSize: 18, textAlign: 'left' }}>
+                                    Mobile Development
+                                </p>
+                            </div>
+                            <div style={{ width: '100%', display: 'flex', gap: 10, filter: 'drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.2))' }}>
+                                <MdWidgets size={52} style={{fill: "url(#blue-purple-gradient)" }} />
+                                <p style={{ color: '#ccc', fontSize: 18, textAlign: 'left' }}>
+                                    Component Systems
+                                </p>
+                            </div>
+                            <div style={{ width: '100%', display: 'flex', gap: 10, filter: 'drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.2))' }}>
+                                <MdSpeed size={52} style={{fill: "url(#blue-purple-gradient)" }} />
+                                <p style={{ color: '#ccc', fontSize: 18, textAlign: 'left' }}>
+                                    Performance Optimization
+                                </p>
+                            </div>
+                            <div style={{ width: '100%', display: 'flex', gap: 10, filter: 'drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.2))' }}>
+                                <MdCode size={52} style={{fill: "url(#blue-purple-gradient)" }} />
+                                <p style={{ color: '#ccc', fontSize: 18, textAlign: 'left' }}>
+                                    TypeScript Mastery
+                                </p>
+                            </div>
                         </div>
-
-                        <SkillsRadar />
-
+                        <div style={dividerWrapper}>
+                            <div style={dividerLine} />
+                        </div>
+                        <div style={{ width: '65%' }}>
+                            <SkillsRadar />
+                        </div>
                     </div>
                 </div>
 
@@ -38,11 +77,32 @@ const Skills: React.FC = () => {
     );
 };
 
+const dividerWrapper: React.CSSProperties = {
+    position: 'relative',
+    width: '41px',
+    alignSelf: 'stretch',
+    display: 'flex',
+    justifyContent: 'center',
+};
+
+const dividerLine: React.CSSProperties = {
+    width: '1px',
+    height: '100%',
+    background: `
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255,255,255,0.08) 30%,
+      rgba(255,255,255,0.08) 70%,
+      transparent 100%
+    )
+  `,
+    filter: 'blur(0.2px)',
+};
+
 const cardStyle: React.CSSProperties = {
-    // position: 'relative',
     width: '1090px',
-    // width: '50%',
-    padding: 20,
+    padding: 32,
     borderRadius: '60px',
     overflow: 'hidden',
     display: 'flex',
@@ -77,10 +137,7 @@ const grainOverlayStyle: React.CSSProperties = {
 };
 
 const contentStyle: React.CSSProperties = {
-    // padding: 'var(--space-20)',
-    // position: 'relative',
-    // zIndex: 2,
-    // textAlign: 'center',
+    width: '100%'
 };
 
 const accentGlowStyle: React.CSSProperties = {

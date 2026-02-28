@@ -85,7 +85,7 @@ const valueStyle: React.CSSProperties = {
     color: '#FFFFFF',
     margin: 0,
     lineHeight: 1,
-    filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.2))'
+    filter: 'drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.2))',
 };
 
 const labelStyle: React.CSSProperties = {
