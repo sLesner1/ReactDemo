@@ -44,14 +44,14 @@ const SkillsRadar: React.FC = () => {
     if (!ctx) return;
 
     const img = new Image();
-    img.src = './chart_gradient.png';
+    img.src = './gradient.png';
     img.onload = () => {
       const pattern = ctx.createPattern(img, 'repeat');
       const matrix = new DOMMatrix();
       matrix.scaleSelf(0.58, 0.58);
       matrix.translateSelf(
-      250,
-        65
+      120,
+        700
       );
 
       pattern.setTransform(matrix);
@@ -73,7 +73,7 @@ const SkillsRadar: React.FC = () => {
               label: 'Skills Overview',
               data: [4, 5, 3.5, 3.5, 4.5],
               fill: true,
-              backgroundColor: 'rgba(109, 249, 251, 0.2)',
+              // backgroundColor: 'rgba(109, 249, 251, 0.2)',
               borderColor: '#E2F8FF',
               borderWidth: 2,
               pointBackgroundColor: '#cf71fa',
